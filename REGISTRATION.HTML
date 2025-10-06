@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: peachpuff;
+        margin: 0;
+        padding: 20px;
+    }
+    h2 {
+        text-align: center;
+    }
+    form {
+        background-color: #8aa4bd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: auto;
+    }
+    table {
+        width: 100%;
+    }
+    td {
+        padding: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    input[type="submit"]:hover {
+        background-color: #4cae4c;
+    }
+
+    .error {
+        color: red;
+        font-size: 14px;
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <form onsubmit="return validateForm()">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" name="name" id="name"></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="email" name="email" id="email"></td>
+      </tr>
+      <tr>
+        <td>Contact Number:</td>
+        <td><input type="text" name="phone" id="phone"></td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <td>
+          <select name="gender" id="gender">
+            <option value="">--SELECT GENDER--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" name="password" id="password"></td>
+      </tr>
+      <tr>
+        <td>Confirm Password:</td>
+        <td><input type="password" name="cpassword" id="cpassword"></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="Register">
+        </td>
+      </tr>
+    </table>
+    <div class="error" id="errorMessage"></div>
+  </form>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const gender = document.getElementById('gender').value;
+      const password = document.getElementById('password').value;
+      const cpassword = document.getElementById('cpassword').value;
+      const errorDiv = document.getElementById('errorMessage');
+
+      let errors = [];
+
+      if (name === "") {
+        errors.push("Name is required.");
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        errors.push("Invalid email address.");
+      }
+
+      const phonePattern = /^\d{10}$/;
+      if (!phonePattern.test(phone)) {
+        errors.push("Phone number must be 10 digits.");
+      }
+
+      if (gender === "") {
+        errors.push("Please select your gender.");
+      }
+
+      if (password.length < 6) {
+        errors.push("Password must be at least 6 characters.");
+      }
+
+      if (password !== cpassword) {
+        errors.push("Passwords do not match.");
+      }
+
+      if (errors.length > 0) {
+        errorDiv.innerHTML = errors.join("<br>");
+        return false; // Stop form submission
+      }
+
+      errorDiv.innerHTML = "";
+      alert("Registration Successful!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>

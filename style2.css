@@ -1,0 +1,178 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: rgb(185, 255, 207);
+  color: black;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.navbar {
+  background-color: goldenrod;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbar h1 {
+  font-size: 24px;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box img {
+  width: 20px;
+  height: 20px;
+}
+
+.search-box input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.hero-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: lightblue;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-section button {
+  padding: 10px 20px;
+  background-color: goldenrod;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero-section button:hover {
+  background-color: darkorange;
+}
+.hero-card, .trending-grid, .novel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card, .novel-card {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img, .novel-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card p, .novel-card h2 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+section h1 {
+  font-size: 24px;
+  margin: 30px 0 10px;
+  color: black;
+  text-align: center;
+}
+.frame {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.filter-btn, .btn1 {
+  padding: 8px 15px;
+  background-color: white;
+  border: 1px solid goldenrod;
+  color: goldenrod;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-btn:hover, .btn1:hover {
+  background-color: darkorange;
+  color: white;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: goldenrod;
+  color: white;
+  margin-top: 20px;
+}
+.rating {
+  display: inline-block;
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rating {
+  display: inline-block;
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.rating .star {
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.rating .star.filled {
+  color: #f5c518;
+}
+
